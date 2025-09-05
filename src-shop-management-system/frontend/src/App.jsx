@@ -14,7 +14,6 @@ import Users from './pages/Users';
 import RedirectToAdmin from './components/RedirectToAdmin';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProfilePage from "./pages/ProfilePage";
-import CheckoutPage from "./pages/CheckoutPage";
 
 
 function App() {
@@ -61,13 +60,12 @@ const MainLayout = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={  <ProtectedRoute> <CartPage /> </ProtectedRoute>} />
-          <Route path="/checkout" element={  <ProtectedRoute> <CheckoutPage /> </ProtectedRoute>} />
+          <Route path="/cart" element={  <ProtectedRoute>  <CartPage /> </ProtectedRoute>} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={  <ProtectedRoute>  <ProfilePage /> </ProtectedRoute>} />
           <Route path="/register" element={<Register />} />
           <Route path="/redirect-admin" element={<RedirectToAdmin />} />
           <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/profile" element={  <ProtectedRoute> <ProfilePage /> </ProtectedRoute>} />
         </Routes>
       </main>
     </>

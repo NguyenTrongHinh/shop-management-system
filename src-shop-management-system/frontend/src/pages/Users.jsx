@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 export default function Users() {
   const [users, setUsers] = useState([]);
 
+  // Dữ liệu người dùng tĩnh ban đầu (có thể thay bằng API call sau)
   useEffect(() => {
     const initialUsers = [
       { _id: "1", username: "hinhnguyen931", email: "hinhnguyen931@gmail.com", role: "admin" },

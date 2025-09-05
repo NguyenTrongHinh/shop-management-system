@@ -72,18 +72,18 @@ export default function CartPage() {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-md">
               {cartItems.map((item) => {
-            const product = item.productId;
-                if (!product) return null;
+                  const product = item.productId;
+                      if (!product) return null;
 
-            const salePrice = product.price * (1 - (product.discount || 0) / 100);
+                  const salePrice = product.price * (1 - (product.discount || 0) / 100);
   
-            return (
-        <div key={item._id || product._id} className="flex items-center gap-4 p-6 border-b last:border-b-0">
-          <img
-              src={product.images?.[0] || "/placeholder.jpg"}
-              alt={product.name}
+                      return (
+       <div key={item._id || product._id} className="flex items-center gap-4 p-6 border-b last:border-b-0">
+         <img
+            src={product.images?.[0] || "/placeholder.jpg"}
+            alt={product.name}
             className="w-20 h-20 object-cover rounded-lg"
-      />
+         />
       
       <div className="flex-1">
         <h3 className="font-semibold text-gray-800">{product.name}</h3>

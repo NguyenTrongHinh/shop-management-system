@@ -121,7 +121,6 @@ export const createProduct = async (req, res) => {
   try {
     const productData = {
       ...req.body,
-      images: imageUrls,
       price: Number(req.body.price),
       countInStock: Number(req.body.countInStock),
       discount: Number(req.body.discount) || 0,
@@ -161,10 +160,6 @@ export const createProduct = async (req, res) => {
 export const updateProduct = async (req, res) => {
   try {
     const updateData = { ...req.body };
-    if (req.files && req.files.length > 0) {
-      const imageUrls = req.files.map(file => file.path);
-      updateData.images = imageUrls;
-    }
     
     // Convert number fields
     if (req.body.price) updateData.price = Number(req.body.price);

@@ -11,7 +11,6 @@ import {
   updateProductRating
 } from "../controllers/productController.js";
 import auth, { isAdmin } from "../middlewares/auth.js";
-import upload from '../middlewares/upload.js';
 
 const router = express.Router();
 
@@ -29,8 +28,5 @@ router.post("/:id/rating", auth, updateProductRating);
 router.post("/", auth, isAdmin, createProduct);
 router.put("/:id", auth, isAdmin, updateProduct);
 router.delete("/:id", auth, isAdmin, deleteProduct);
-
-router.post("/", auth, isAdmin, upload.array('images', 5), createProduct);
-router.put("/:id", auth, isAdmin, upload.array('images', 5), updateProduct);
 
 export default router;

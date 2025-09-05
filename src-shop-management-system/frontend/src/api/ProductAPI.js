@@ -16,14 +16,12 @@ const productAPI = {
   
   // Lấy sản phẩm nổi bật 
   getFeaturedProducts: () => axiosClient.get("/products/featured"),
-  // Lấy sản phẩm theo category
   getProductsByCategory: (category, params = {}) => 
     axiosClient.get("/products", { params: { ...params, category } }),
   // CRUD operations 
   createProduct: (data) => axiosClient.post("/products", data),
   updateProduct: (id, data) => axiosClient.put(`/products/${id}`, data),
   deleteProduct: (id) => axiosClient.delete(`/products/${id}`),
-  
   
   // Cập nhật đánh giá 
   updateProductRating: (id, rating) => axiosClient.post(`/products/${id}/rating`, { rating }),

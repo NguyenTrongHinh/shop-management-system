@@ -7,7 +7,7 @@ import {
   BarChart3, Settings, LogOut, Home 
 } from "lucide-react";
 import UserManagement from "../components/UserManagement";
-import ProductManagement from "../components/ProductManagement";
+import ProductManagement from "../components/admin/ProductManagement";
 import CategoryManagement from "../components/CategoryManagement";
 
 export default function AdminDashboard() {
